@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo%} Alta {% endblock %}
+{% block contenido_pagina %}
+    <h1>Nuevo movimiento</h1>
+    <form action="/alta" method="post">
+        <div class="grid">
+            <label for="fecha">Fecha:
+                <input type="date" name="fecha" id="fecha" value="{{datos.fecha}}">
+            </label>
+            <label for="hora">Hora:
+                <input type="time" name="hora" id="hora" value="{{datos.hora}}">
+            </label>
+        </div>
+        <label for="concepto">Concepto:</label>
+        <input type="text" name="concepto" id="concepto" value="{{datos.concepto}}">
+        <label for="es_ingreso">Es ingreso:
+            <input type="checkbox" name="es_ingreso" id="es_ingreso" value="{{datos.es_ingreso}}">
+        </label>
+        <label for="cantidad">Cantidad:</label>
+        <input type="number" name="cantidad" id="cantidad" step="0.01" value="{{datos.cantidad}}" >
+        <input type="submit" value="Aceptar" id="aceptar" name="aceptar">
+    </form>
+{% endblock %}

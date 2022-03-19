@@ -7,4 +7,4 @@ Aplicación de control de gastos, registro y modificación.
 
 ### Fichero .env
 
-Copiar el fichero .env_template, renombrarlo a '.env' y elegir una de las opciones de FLASK_ENV
+Copiar el fichero '.env_template', renombrarlo a '.env' y elegir una de las opciones de FLASK_ENV

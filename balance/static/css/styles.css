@@ -1,0 +1,29 @@
+:root {
+    --color-primario: #8377d1;
+    --color-secundario: #f7dba7;
+    --negro: #2c363f;
+    --blanco: #fafafa;
+    --separacion-defecto: 8px; 
+}
+
+header, footer {
+    padding: calc(2 * var(--separacion-defecto));
+    font-size: 24px;
+    background-color: var(--color-primario);
+    color: var(--blanco);
+    margin-top: var(--separacion-defecto);
+}
+footer {
+    width: calc(100% - 50px); 
+    position: absolute;
+    bottom: var(--separacion-defecto);
+}
+
+.actions {
+    text-align: right;
+}
+
+.actions [role="button"] {
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
+}

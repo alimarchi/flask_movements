@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance de cuenta | {% block titulo %}{% endblock %}</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="static/css/pico.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            Cabecera &nbsp;&nbsp;&nbsp; de <em>balances</em>
+        </div>
+    </header>
+    <nav class="container">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/alta">Nuevo movimiento</a></li>
+        </ul>
+    </nav>
+    <section class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+        <div class="error-msgs">
+            <ul>
+                {% for mensaje in messages %}
+                <li>{{ mensaje }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+            {% endif %}
+        {% endwith %}
+
+        {% block contenido_pagina %}{% endblock %}
+    </section>
+    <footer>
+        <div class="container">
+            &copy; 2022 - Todos los derechos reservados
+        </div>
+    </footer>
+</body>
+</html>

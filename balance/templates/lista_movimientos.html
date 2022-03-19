@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Movimientos {% endblock %}
+
+{% block contenido_pagina %}
+    <h1>Lista de movimientos</h1>
+    <table class="tabla_movimientos">
+        <tr class="tabla_mv_cabecera">
+            <th>Fecha</td>
+            <th>Hora</td>
+            <th>Concepto</td>
+            <th>Tipo</td>
+            <th>Cantidad</td>
+        </tr>
+
+        {% for movimiento in movimientos %}
+        <tr>
+            <td>{{ movimiento.fecha }}</td>
+            <td>{{ movimiento.hora }} </td>
+            <td>{{ movimiento.concepto}}</td>
+            <td>
+                {% if movimiento.es_ingreso %} 
+                    Ingreso 
+                {% else %} 
+                    Gasto 
+                {% endif %}
+            </td>
+            <td>{{ movimiento.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p class="actions">
+        <a href="/alta" role="button">Ir a otro sitio</a>
+    </p>
+{% endblock %}
